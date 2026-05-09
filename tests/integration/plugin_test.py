@@ -4,9 +4,9 @@ from tests.units.fake import fake_group_message_event_v11
 
 
 async def test_plugin_metadata(app: App):
-    from nonebot_plugin_template import __plugin_meta__
-    from nonebot_plugin_template.config import Config
-    from nonebot_plugin_template.handlers import plugin_config, template_demo
+    from nonebot_plugin_who_at_me_next import __plugin_meta__
+    from nonebot_plugin_who_at_me_next.config import Config
+    from nonebot_plugin_who_at_me_next.handlers import plugin_config, template_demo
 
     assert __plugin_meta__.name == "名称"
     assert __plugin_meta__.description == "描述"
@@ -19,7 +19,7 @@ async def test_plugin_metadata(app: App):
 async def test_template_demo_command_without_text(app: App):
     from nonebot.adapters.onebot.v11 import Message
 
-    from nonebot_plugin_template.handlers import template_demo
+    from nonebot_plugin_who_at_me_next.handlers import template_demo
 
     async with app.test_matcher(template_demo) as ctx:
         bot = ctx.create_bot()
@@ -36,7 +36,7 @@ async def test_template_demo_command_without_text(app: App):
 async def test_template_demo_command_with_text(app: App):
     from nonebot.adapters.onebot.v11 import Message
 
-    from nonebot_plugin_template.handlers import template_demo
+    from nonebot_plugin_who_at_me_next.handlers import template_demo
 
     async with app.test_matcher(template_demo) as ctx:
         bot = ctx.create_bot()
